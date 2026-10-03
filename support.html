@@ -3,117 +3,212 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Support - LocalGemmaChat</title>
+  <title>Help &amp; Support - LocalGemmaChat</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; color: #333; max-width: 780px; margin: 40px auto; padding: 0 20px; }
     h1 { color: #222; }
-    h2 { color: #444; margin-top: 1.6em; font-size: 1.2em; }
-    footer { margin-top: 3em; color: #888; font-size: 0.85em; }
+    h2 { color: #444; margin-top: 1.8em; font-size: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 0.25em; }
+    h3 { color: #444; margin-top: 1.3em; font-size: 1.03em; }
+    table { border-collapse: collapse; margin: 1.2em 0; font-size: 0.93em; width: 100%; }
+    th, td { border: 1px solid #e2e2e2; padding: 7px 10px; text-align: left; vertical-align: top; }
+    th { background: #fafafa; font-weight: 600; }
+    table.meta th { white-space: nowrap; width: 30%; }
+    code { background: #f5f5f5; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+    .callout { background: #f6f9fc; border-left: 4px solid #4a90d9; padding: 12px 16px; margin: 1.3em 0; border-radius: 0 6px 6px 0; }
+    .warn { background: #fff8ec; border-left-color: #e0a33a; }
+    ul, ol { padding-left: 1.3em; }
+    li { margin: 0.4em 0; }
+    nav.toc { background: #fafafa; border: 1px solid #eee; border-radius: 6px; padding: 12px 16px; font-size: 0.94em; }
+    nav.toc ul { margin: 0.4em 0 0; }
+    footer { margin-top: 3em; color: #888; font-size: 0.85em; border-top: 1px solid #eee; padding-top: 1em; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #1b1b1d; color: #d6d6d6; }
+      h1, h2, h3 { color: #f0f0f0; }
+      h2 { border-bottom-color: #2f2f31; }
+      th, td { border-color: #3a3a3c; }
+      th, nav.toc { background: #242426; }
+      nav.toc { border-color: #2f2f31; }
+      code { background: #2a2a2c; }
+      .callout { background: #20262c; border-left-color: #4a90d9; }
+      .warn { background: #2b2620; border-left-color: #e0a33a; }
+      footer { border-top-color: #2f2f31; color: #9a9a9a; }
+    }
   </style>
 </head>
 <body>
 
-<h1>LocalGemmaChat Support</h1>
+<h1>LocalGemmaChat &mdash; Help &amp; Support</h1>
 
-<p>Thank you for using LocalGemmaChat.</p>
+<p>LocalGemmaChat is a fully on-device AI chat app for iPhone. The language model runs on your own hardware: no account, no sign-in, no cloud service, and nothing about your conversations leaves your device. This page explains how to use the app, what its limits are, and how to fix common problems.</p>
 
-<h2>Contact Us</h2>
-<p>If you have any questions, technical issues, or would like to provide feedback, please reach out to us via email:</p>
-<p><strong>Email: <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></strong></p>
+<table class="meta">
+  <tr><th>Version documented</th><td>1.1.2 (build 1)</td></tr>
+  <tr><th>Last updated</th><td>October 4, 2026</td></tr>
+  <tr><th>Platform</th><td>iPhone, iOS 26.0 or later</td></tr>
+  <tr><th>Model</th><td>Gemma 4 E2B Instruct (text-only, 4-bit) &mdash; about 2.5&nbsp;GiB, downloaded once</td></tr>
+  <tr><th>Internet needed</th><td>Only for the first model download. Fully offline afterwards.</td></tr>
+  <tr><th>Support contact</th><td><a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></td></tr>
+</table>
 
-<h2>Frequently Asked Questions (FAQ)</h2>
+<nav class="toc">
+  <strong>On this page</strong>
+  <ul>
+    <li><a href="#start">Getting started</a></li>
+    <li><a href="#menus">The on-screen menus</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#memory">How the conversation and its limits work</a></li>
+    <li><a href="#trouble">Troubleshooting</a></li>
+    <li><a href="#faq">Frequently asked questions</a></li>
+    <li><a href="#report">Reporting a problem</a></li>
+  </ul>
+</nav>
 
-<h3>Q: Is my data sent to a server?</h3>
-<p>A: No. LocalGemmaChat runs the AI model entirely on your device. Nothing you type is sent to any server.</p>
+<h2 id="start">Getting started</h2>
 
-<h3>Q: Does the app collect any data?</h3>
-<p>A: No. There is no account, no analytics, and no tracking. Chat history is stored only on your device and can be deleted with the "Clear Chat" button.</p>
+<ol>
+  <li><strong>Check your device.</strong> You need an iPhone with iOS 26.0 or later and roughly <strong>3&nbsp;GB of free storage</strong> (2.5&nbsp;GiB for the model, plus working space).</li>
+  <li><strong>Download the model.</strong> On first launch the app asks you to confirm the download and shows its size. Accept, keep the app in the foreground on a reliable connection, and wait. The download uses a background session, so it can continue if you briefly leave the app.</li>
+  <li><strong>Start chatting.</strong> Once the model is loaded you can type a message and send it. From this point on the app works entirely offline &mdash; you can put the phone in Airplane Mode and it will still reply.</li>
+</ol>
 
-<h3>Q: Why does the app need to download a model before I can chat?</h3>
-<p>A: The model is downloaded once from Hugging Face (or hf-mirror.com). This direct download is the only network connection the app makes. After download, all generation is done offline on your device.</p>
+<h2 id="menus">The on-screen menus</h2>
 
-<h3>Q: How can I report a bug?</h3>
-<p>A: Please email us at <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a> with your device model, iOS version, and a description of the issue.</p>
-
-<h2>Terms &amp; Conditions</h2>
-
-<p>These terms and conditions apply to the LocalGemmaChat app for mobile devices, together with any related services operated by BIN XIAO (collectively, the "Application"). BIN XIAO is hereby referred to as the "Service Provider".</p>
-
-<p>By downloading or using the Application, you agree to these Terms and Conditions. You should read them carefully before using the Application.</p>
-
-<h3>License to use the Application</h3>
-<p>Subject to your compliance with these Terms, the Service Provider grants you a limited, non-exclusive, non-transferable, revocable license to install and use the Application on a mobile device for personal or internal business purposes. You may not reproduce, distribute, modify, create derivative works from, reverse engineer, decompile, or disassemble the Application, except as and only to the extent that such activity is expressly permitted by applicable law.</p>
-
-<h3>Intellectual Property</h3>
-<p>The Service Provider retains all intellectual property rights in the Application, including its code, design, trademarks, service marks, trade names, logos, and branding (the "IP"). Nothing in these Terms grants you any license or right to use the Service Provider's trademarks, logos, or branding for any purpose. You agree not to remove, alter, or obscure any copyright, trademark, or other proprietary notices displayed in or on the Application.</p>
-
-<h3>Termination</h3>
-<p>The Service Provider may suspend your access to the Application or services if you materially breach these Terms. The Service Provider will provide you with written notice of the breach and, where the breach is capable of cure, you will have 14 days from receipt of notice to remedy the breach. If you fail to cure the breach within that period, the Service Provider may terminate your access.</p>
-
-<p>The Service Provider may suspend or terminate your access immediately without notice if you violate applicable law, infringe intellectual property rights, or engage in activity that could cause harm to other users or the Service Provider.</p>
-
-<p>Upon termination, your right to use the Application will end and you must delete all copies from your devices.</p>
-
-<p>By accessing and using this Application, you represent that you are legally permitted to use it in your jurisdiction. You must be at least 16 years of age (the age of digital consent in your jurisdiction) to use the Application. If you are below 16, a parent or legal guardian must review and accept these Terms on your behalf.</p>
-
-<p>Unauthorized copying, modification of the Application, any part of the Application, or the Service Provider's trademarks is strictly prohibited. Any attempts to extract the source code of the Application, translate the Application into other languages, or create derivative versions are not permitted. All trademarks, copyrights, database rights, and other intellectual property rights related to the Application remain the property of the Service Provider.</p>
-
-<h3>User-Generated Content and Acceptable Use</h3>
-<p>If this Application allows users to post, share, or upload content, you agree not to post content that:</p>
+<h3>Model menu (bottom of the screen)</h3>
 <ul>
-  <li>Is illegal or violates third-party intellectual property rights (copyright, trademark, patents)</li>
-  <li>Is abusive, threatening, harassing, defamatory, or hate speech</li>
-  <li>Contains discrimination or incitement to violence or illegal activity</li>
-  <li>Is spam, phishing, or contains malware</li>
-  <li>Violates the privacy or personal data rights of others</li>
-  <li>Is misleading, false, or deceptive</li>
-  <li>Contains explicit violence or sexual content (unless age-gated appropriately)</li>
-</ul>
-<p>The Service Provider reserves the right to remove or disable access to content that violates these guidelines, to suspend or terminate accounts of users who repeatedly violate these guidelines, to cooperate with law enforcement if illegal content is reported, and to moderate, filter, or hide content that violates these Terms, applicable law, or the guidelines set out above.</p>
-
-<p>Content submitted through the Application may be visible to other users or to the public, depending on how the Application functions. If you believe content violates these Terms, infringes your rights, or is unlawful, you may report it to the Service Provider at <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>.</p>
-
-<p>By submitting User-Generated Content you grant the Service Provider a non-exclusive, worldwide, royalty-free license to use, reproduce, distribute, prepare derivative works of, display and perform the content in connection with the Application and the Service Provider's business. Your content may include personal data; processing of personal data related to User-Generated Content is governed by the Privacy Policy.</p>
-
-<h3>Limitation of Liability</h3>
-<p>To the fullest extent permitted by law, the Service Provider shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to lost profits, data loss, or business interruption, even if advised of the possibility of such damages.</p>
-
-<p>However, the Service Provider retains full liability for:</p>
-<ul>
-  <li>Death or personal injury caused by negligence</li>
-  <li>Fraud or fraudulent misrepresentation</li>
-  <li>Any other liability that cannot be excluded or limited under applicable law</li>
+  <li><strong>Model name</strong> &mdash; shows the currently installed model. Version 1.1.2 ships with a single model, so there is nothing to switch between.</li>
+  <li><strong>DEL &lt;model&gt;</strong> &mdash; deletes the downloaded model files and that model&rsquo;s saved chat history, freeing about 2.5&nbsp;GiB. You will be asked to re-download the next time you want to chat.</li>
+  <li><strong>HF Source</strong> &mdash; chooses where model files are downloaded from: <code>hf-mirror.com</code> (default) or <code>huggingface.co</code>. If a download is slow or fails, try the other source.</li>
 </ul>
 
-<p>To the fullest extent permitted by law, the total liability of the Service Provider for any claim shall not exceed the amount paid by you to the Service Provider for the Application in the 12 months preceding the claim, or the minimum amount that must be paid under applicable law, whichever is greater. If the Application is provided free of charge, this means the Service Provider's liability is limited to the minimum amount permitted by applicable law.</p>
+<h3>&ldquo;&hellip;&rdquo; menu (top-right)</h3>
+<ul>
+  <li><strong>Export&hellip;</strong> &mdash; saves the current conversation as a Markdown (<code>.md</code>) file; on iPhone you choose the destination in the Files app.</li>
+  <li><strong>About</strong> &mdash; version information and a link to the <a href="index.html">Privacy Policy</a>.</li>
+  <li><strong>Clear Chat</strong> &mdash; erases the current conversation and deletes its saved history. Clearing is immediate and does not reload the model.</li>
+  <li><strong>Tools calling</strong> &mdash; off by default; see below.</li>
+  <li><strong>Thinking</strong> &mdash; off by default; see below.</li>
+</ul>
 
-<p>Some functions of the Application require an active internet connection (for downloading AI model files). The Service Provider cannot be held responsible if the Application does not function at full capacity due to lack of access to Wi-Fi or if you have exhausted your data allowance. By using the application outside of a Wi-Fi area, you accept responsibility for any data charges, including roaming charges.</p>
+<h2 id="features">Features</h2>
 
-<p>The Service Provider reserves the right to modify the Application or charge for its services at any time. Any charges will be clearly communicated to you.</p>
+<h3>Tools calling (recommended for anything involving numbers)</h3>
+<p>When enabled, the model may call built-in tools instead of answering from memory. This makes arithmetic reliable, because the calculation is performed by the app rather than guessed by the model:</p>
+<ul>
+  <li><code>calculate</code> &mdash; arithmetic and expressions (e.g. &ldquo;1500 &times; 2&rdquo;).</li>
+  <li><code>get_current_time</code> &mdash; the current date and time, optionally in a time zone you name (for example <code>Asia/Tokyo</code>). Local only; it reads your device clock.</li>
+  <li><code>generate_random_number</code> &mdash; a random number within a range you specify.</li>
+  <li><code>get_weather</code> &mdash; a <strong>demonstration tool that returns fixed sample data</strong> (20&nbsp;&deg;C, &ldquo;Sunny&rdquo;). It does not contact any weather service and the values it reports are not real weather.</li>
+</ul>
+<p>Tools run locally, so enabling them does not affect privacy. Enabling tools makes each reply slightly slower, because the model takes an extra round to request the tool and then read its result.</p>
 
-<p>The Service Provider may wish to update the Application at some point. You should accept updates when offered; if you choose not to, the Service Provider may cease to support earlier versions and the Application may not function properly. The Service Provider may also wish to cease providing the Application and may terminate its use at any time without providing termination notice to you.</p>
+<h3>Thinking</h3>
+<p>Thinking turns on the model&rsquo;s built-in reasoning mode, in which it works through a problem before answering. It is <strong>off by default</strong> because it is noticeably slower and it consumes part of the same limited reply budget described below. Your choice is remembered between launches. Because the setting is applied when the model session is created, switching it reloads the model &mdash; expect a few seconds of &ldquo;Loading model weights&hellip;&rdquo; and a brief full-screen overlay. Your conversation is preserved across the reload.</p>
 
-<h3>Indemnification</h3>
-<p>To the fullest extent permitted by law, you agree to indemnify and hold harmless the Service Provider, its affiliates, officers, directors, employees and agents from and against any claims, liabilities, damages, losses and expenses, including reasonable legal fees, arising out of or directly related to your breach of these Terms or your intentional misuse of the Application. This indemnification does not apply to claims arising from the Service Provider's own negligence, breach of these Terms, or violation of applicable law.</p>
+<div class="callout warn">
+  <p><strong>Two toggles you may want to combine:</strong> leave <em>Tools calling</em> on if you ask questions with numbers, and leave <em>Thinking</em> off unless you specifically want the model to reason step by step. Both are independent.</p>
+</div>
 
-<h3>Governing Law and Jurisdiction</h3>
-<p>These Terms and Conditions are governed by the laws of the jurisdiction in which the Service Provider is established, excluding conflict of law rules, except to the extent mandatory consumer protection laws provide otherwise. Any dispute arising out of or relating to these Terms will be brought before the courts that have jurisdiction under applicable law.</p>
+<h2 id="memory">How the conversation and its limits work</h2>
 
-<h3>Severability</h3>
-<p>If any provision of these Terms and Conditions is held to be invalid, illegal, or unenforceable by a court of competent jurisdiction, such provision shall be modified to the minimum extent necessary to make it valid and enforceable, and the remaining provisions of these Terms shall remain in full force and effect.</p>
+<p>LocalGemmaChat runs a small 4-bit model that must fit in your iPhone&rsquo;s memory, so it deliberately keeps very little context. Understanding this explains most surprising behaviour:</p>
 
-<h3>Entire Agreement</h3>
-<p>These Terms and Conditions, together with the Privacy Policy, constitute the entire agreement between you and the Service Provider concerning your use of the Application, superseding any prior agreements or understandings.</p>
+<ul>
+  <li><strong>Only the last two messages are sent to the model each turn</strong> (your most recent message and the assistant&rsquo;s most recent reply), together with a fixed system instruction. Earlier messages remain visible on screen and are included in the exported file, but the model does <em>not</em> see them. In practice the model &ldquo;forgets&rdquo; older parts of a long conversation.</li>
+  <li><strong>Each reply is limited to about 1,024 tokens.</strong> A long answer may end in the middle of a sentence &mdash; that is the limit, not an error. Sending &ldquo;continue&rdquo; will produce more.</li>
+  <li><strong>Thinking shares that same budget.</strong> With Thinking on, part of the 1,024 tokens is spent on reasoning, leaving less room for the visible answer.</li>
+  <li><strong>Long generations are demanding.</strong> Generating many tokens in a row keeps the GPU and CPU busy; on a memory-constrained iPhone, iOS may terminate the app if it exceeds system limits. See Troubleshooting.</li>
+</ul>
 
-<h3>Changes to These Terms and Conditions</h3>
-<p>The Service Provider may periodically update their Terms and Conditions. You are advised to review this page regularly for any changes. The Service Provider will notify you of any changes by posting the new Terms and Conditions on this page. Previous versions of these Terms and Conditions will be maintained and made available upon request by contacting the Service Provider at <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>.</p>
+<h2 id="trouble">Troubleshooting</h2>
 
-<p>These terms and conditions are effective as of 2026-09-16.</p>
+<table>
+  <tr><th>Symptom</th><th>What to do</th></tr>
+  <tr>
+    <td>The app closes by itself during a long reply</td>
+    <td>This is iOS terminating the app for exceeding memory or CPU limits while generating a long response. Keep replies shorter, turn <em>Thinking</em> off, and avoid asking for very long texts (for example multi-page documents). Your saved history is preserved, so reopen the app and continue &mdash; the conversation is still there.</td>
+  </tr>
+  <tr>
+    <td>A reply stops mid-sentence</td>
+    <td>Normal: the reply hit the ~1,024-token limit. Send &ldquo;continue&rdquo; to get the rest.</td>
+  </tr>
+  <tr>
+    <td>The model seems to forget what we discussed</td>
+    <td>Expected. Only the last two messages are sent each turn. For anything that must be remembered, repeat it in your current message.</td>
+  </tr>
+  <tr>
+    <td>The download stalls or fails</td>
+    <td>Confirm you have a working connection and free space, then try again &mdash; the download resumes and the app re-checks the files. If it keeps failing, switch <em>HF Source</em> to the other host.</td>
+  </tr>
+  <tr>
+    <td>&ldquo;Loading model weights&hellip;&rdquo; seems to take a long time</td>
+    <td>The app is loading roughly 2.5&nbsp;GiB of weights into memory. A cold load takes noticeably longer than a reload of an already-downloaded model. Wait for the overlay to disappear; do not force-quit.</td>
+  </tr>
+  <tr>
+    <td>You need free space</td>
+    <td>Open the model menu and choose <em>DEL &lt;model&gt;</em>. This removes the weights (about 2.5&nbsp;GiB) and that model&rsquo;s history. Everything else stays.</td>
+  </tr>
+  <tr>
+    <td>The app reports that the model is not loaded</td>
+    <td>This existed in earlier builds and is fixed in 1.1.2: clearing the chat no longer unloads the model. If you still see it, close and reopen the app.</td>
+  </tr>
+  <tr>
+    <td>You want to start over completely</td>
+    <td>Use <em>Clear Chat</em> to wipe the conversation. To remove everything &mdash; model, history, preferences and the local diagnostics log &mdash; delete the app from the Home Screen.</td>
+  </tr>
+</table>
 
-<h3>Contact Us</h3>
-<p>If you have any questions or suggestions about the Terms and Conditions, please do not hesitate to contact the Service Provider at <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>.</p>
+<h2 id="faq">Frequently asked questions</h2>
 
-<footer>&copy; 2026 BIN XIAO. All rights reserved.</footer>
+<h3>Do I need an internet connection?</h3>
+<p>Only to download the model (about 2.5&nbsp;GiB) and to check its file sizes beforehand. After that the app is fully usable offline.</p>
+
+<h3>Is my conversation sent anywhere?</h3>
+<p>No. The model runs on your iPhone. There is no account, no analytics, no advertising, no crash reporting and no tracking. The only network requests the app ever makes are the model download and the small metadata request that tells it the download size. See the <a href="index.html">Privacy Policy</a> for the exact details.</p>
+
+<h3>Are there subscriptions, in-app purchases or premium features?</h3>
+<p>No. As of version 1.1.2 the app contains no purchases at all, and every feature is free.</p>
+
+<h3>Which AI model does it use?</h3>
+<p>Gemma 4 E2B Instruct, a text-only 4-bit build published on Hugging Face as <code>over-show/gemma-4-e2b-it-text-only-4bit</code>. It is distributed under Google&rsquo;s <strong>Gemma Terms of Use</strong>, so Google&rsquo;s terms and its Prohibited Use Policy apply to your use of the model&rsquo;s outputs, in addition to these support notes. This app is not affiliated with or endorsed by Google. Only one model ships with the app, and the app has no interface for adding your own.</p>
+
+<h3>Can I send images?</h3>
+<p>No. The bundled model is text-only, so the app does not offer image input.</p>
+
+<h3>Where is my data stored, and how do I delete it?</h3>
+<p>Everything is inside the app&rsquo;s private storage on your iPhone: the model in <code>Documents/.localllmclient/</code>, your chat history in <code>Application Support/LLMclient/History/</code>, one preference in system settings storage, and a small local memory diagnostics log in <code>Documents/diagnostics.log</code>. Use <em>Clear Chat</em> for the conversation, <em>DEL &lt;model&gt;</em> for the model files, or delete the app to remove all of it. Nothing is stored on any server.</p>
+
+<h3>Why is the app &ldquo;LocalGemmaChat&rdquo; but the bundle identifier says &ldquo;LLMclient&rdquo;?</h3>
+<p>The app was renamed to LocalGemmaChat in version 1.1.2. Its technical bundle identifier was deliberately left unchanged so that existing installations keep their downloaded model, history and preferences.</p>
+
+<h3>Is the weather tool giving me real weather?</h3>
+<p>No. It is a demonstration tool that returns fixed sample data so you can see tool calling at work. It never contacts a weather service.</p>
+
+<h3>What changed in 1.1.2?</h3>
+<ul>
+  <li>All features are now free &mdash; in-app purchases were removed entirely.</li>
+  <li>Renamed to <strong>LocalGemmaChat</strong> (bundle identifier unchanged).</li>
+  <li>Added the <strong>Thinking</strong> toggle (off by default).</li>
+  <li>Launch is much faster: the app no longer re-reads and re-verifies the 2.5&nbsp;GiB of model weights on every start, and no longer shows a &ldquo;Switching model&rdquo; step.</li>
+  <li>Fixed a bug where clearing the chat could leave the app unable to reply until it was restarted.</li>
+  <li>Fixed the app icon so it passes App Store validation.</li>
+  <li>The model menu was reduced to the single bundled model.</li>
+</ul>
+
+<h2 id="report">Reporting a problem</h2>
+
+<p>Email <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>. To help diagnose the issue quickly, please include:</p>
+
+<ul>
+  <li>your iPhone model and iOS version;</li>
+  <li>the app version, shown in <em>&hellip;</em> &rarr; <em>About</em> (the supported version is 1.1.2, build 1);</li>
+  <li>what you asked the model to do, and whether <em>Tools calling</em> or <em>Thinking</em> was enabled;</li>
+  <li>the steps that reproduce the problem, and any message you saw on screen.</li>
+</ul>
+
+<footer>
+  <p>LocalGemmaChat 1.1.2 (build 1) &middot; Help &amp; Support &middot; Last updated October 4, 2026<br>
+  See also: <a href="index.html">Privacy Policy</a></p>
+</footer>
 
 </body>
 </html>

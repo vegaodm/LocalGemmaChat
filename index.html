@@ -8,42 +8,148 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.65; color: #333; max-width: 780px; margin: 40px auto; padding: 0 20px; }
     h1 { color: #222; }
     h2 { color: #444; margin-top: 1.6em; font-size: 1.2em; }
-    footer { margin-top: 3em; color: #888; font-size: 0.85em; }
+    h3 { color: #444; margin-top: 1.3em; font-size: 1.03em; }
+    table.meta { border-collapse: collapse; margin: 1.2em 0; font-size: 0.92em; width: 100%; }
+    table.meta th, table.meta td { border: 1px solid #e2e2e2; padding: 6px 10px; text-align: left; vertical-align: top; }
+    table.meta th { background: #fafafa; font-weight: 600; white-space: nowrap; }
+    code { background: #f5f5f5; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
+    .callout { background: #f6f9fc; border-left: 4px solid #4a90d9; padding: 12px 16px; margin: 1.3em 0; border-radius: 0 6px 6px 0; }
+    ul { padding-left: 1.25em; }
+    li { margin: 0.35em 0; }
+    footer { margin-top: 3em; color: #888; font-size: 0.85em; border-top: 1px solid #eee; padding-top: 1em; }
+    @media (prefers-color-scheme: dark) {
+      body { background: #1b1b1d; color: #d6d6d6; }
+      h1, h2, h3 { color: #f0f0f0; }
+      table.meta th, table.meta td { border-color: #3a3a3c; }
+      table.meta th { background: #242426; }
+      code { background: #2a2a2c; }
+      .callout { background: #20262c; border-left-color: #4a90d9; }
+      footer { border-top-color: #2f2f31; color: #9a9a9a; }
+    }
   </style>
 </head>
 <body>
 
 <h1>Privacy Policy</h1>
 
-<p>This privacy policy applies to the LocalGemmaChat app for mobile devices (the "Application"), operated by BIN XIAO (the "Service Provider").</p>
+<p>This privacy policy applies to the <strong>LocalGemmaChat</strong> app for iPhone (the &ldquo;Application&rdquo;), operated by BIN XIAO (the &ldquo;Service Provider&rdquo;).</p>
 
-<p><strong>Your data stays on your device.</strong> LocalGemmaChat runs entirely on-device and contains no ad frameworks, no analytics SDKs, and no tracking technologies.</p>
+<div class="callout">
+  <p><strong>Your data stays on your device.</strong> LocalGemmaChat runs the AI model entirely on your iPhone. There are no accounts, no ads, no analytics, no telemetry, no crash-reporting SDKs, no third-party tracking, and no in-app purchases. The Application never sends your conversations, prompts, or model outputs to the Service Provider or to anyone else.</p>
+</div>
 
-<h2>Information Collection and Use</h2>
+<table class="meta">
+  <tr><th>Application</th><td>LocalGemmaChat (iPhone)</td></tr>
+  <tr><th>Version covered</th><td>1.1.2 (build 1)</td></tr>
+  <tr><th>Bundle identifier</th><td><code>com.vega.LLMclient</code></td></tr>
+  <tr><th>Requirements</th><td>iPhone running iOS 26.0 or later</td></tr>
+  <tr><th>Service Provider</th><td>BIN XIAO</td></tr>
+  <tr><th>Contact</th><td><a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></td></tr>
+  <tr><th>Effective date</th><td>October 4, 2026</td></tr>
+</table>
+
+<h2>1. Data we do not collect</h2>
+
+<p>The Service Provider does not collect, store, transmit, sell, or share any personal data. Specifically, the Application has no functionality to:</p>
+
 <ul>
-  <li>The Service Provider does <strong>not</strong> collect, store, or receive any of your personal data. The Application has no account system, no analytics, and no servers.</li>
-  <li>Conversations are generated on your device by a local AI model.</li>
+  <li>create or sign in to an account;</li>
+  <li>collect analytics, usage statistics, or crash reports;</li>
+  <li>display advertising or use advertising identifiers (IDFA);</li>
+  <li>access your contacts, photos, microphone, camera, location, or health data;</li>
+  <li>track you across apps or websites;</li>
+  <li>process payments &mdash; the Application contains no purchases or subscriptions. All features are free.</li>
 </ul>
 
-<h2>What data is processed and where</h2>
+<p>Because no data is collected, there is nothing for the Service Provider to access, correct, sell, or delete on its side.</p>
+
+<h2>2. Network access</h2>
+
+<p>The Application makes network requests for exactly two purposes, both related to obtaining the on-device AI model:</p>
+
+<h3>2.1 Model download</h3>
+<p>On first use, the Application downloads the AI model files (about <strong>2.5&nbsp;GiB</strong>) from Hugging Face. The default download host is <code>hf-mirror.com</code>, an independent third-party mirror of the Hugging Face Hub. You can switch the source to <code>huggingface.co</code> at any time from the <em>HF Source</em> menu inside the Application.</p>
+<p>As with any download, the host you connect to can see your IP address and the standard request metadata (such as user agent). Those hosts operate under their own privacy policies, which the Service Provider does not control. No information about you is added to these requests by the Application.</p>
+
+<h3>2.2 Model metadata</h3>
+<p>Before downloading, the Application retrieves the model&rsquo;s file list and file sizes from the same host so it can show you the total download size and ask for confirmation.</p>
+
+<div class="callout">
+  <p><strong>The Application works fully offline after the model has been downloaded.</strong> No part of your conversation, and no usage information, is transmitted at any time &mdash; including while you are chatting. You can verify this by enabling Airplane Mode after the download completes; the Application continues to work normally.</p>
+</div>
+
+<h2>3. Data stored on your device</h2>
+
+<p>The following items are written to the Application&rsquo;s private storage area on your iPhone. They are readable only by the Application, are never uploaded, and are removed when you delete the Application.</p>
+
+<table class="meta">
+  <tr><th>What</th><th>Where</th><th>Purpose</th></tr>
+  <tr>
+    <td>Model weights and a small metadata file (<code>.filesmeta</code>)</td>
+    <td><code>Documents/.localllmclient/huggingface/models/&hellip;</code> (marked as excluded from iCloud/iTunes backup)</td>
+    <td>Running the AI model offline, and verifying that a download completed</td>
+  </tr>
+  <tr>
+    <td>Conversation history: one JSON file and one human-readable Markdown log per model</td>
+    <td><code>Application Support/LLMclient/History/</code></td>
+    <td>Restoring your chat when you reopen the Application, and providing the Markdown export</td>
+  </tr>
+  <tr>
+    <td>One preference: whether &ldquo;Thinking&rdquo; mode is on</td>
+    <td>System <code>UserDefaults</code> (key <code>thinkingEnabled</code>)</td>
+    <td>Remembering your setting between launches</td>
+  </tr>
+  <tr>
+    <td>Memory diagnostics log (<code>diagnostics.log</code>, automatically capped at 512&nbsp;KB)</td>
+    <td><code>Documents/diagnostics.log</code></td>
+    <td>Recording on-device memory usage per reply, so abnormal terminations caused by iOS memory limits can be diagnosed</td>
+  </tr>
+</table>
+
+<p>All AI processing &mdash; tokenizing your prompt, running the model, and generating the reply &mdash; happens locally on your iPhone&rsquo;s hardware. Nothing is sent to a cloud service. The diagnostics log contains only numeric memory measurements and the model identifier; it is never transmitted anywhere.</p>
+
+<h2>4. Third-party components and model license</h2>
+
+<p>The Application includes the following open-source components, all of which run locally on your device and none of which collect data on behalf of the Service Provider:</p>
+
 <ul>
-  <li>Chat history and settings are stored only in the Application's local storage on your device. You can delete them at any time with the "Clear Chat" button, or by uninstalling the Application.</li>
-  <li>A local diagnostics log (capped at 512 KB) records memory and performance data to help troubleshoot issues. It stays on your device and is never transmitted.</li>
+  <li><strong>MLX / mlx-swift</strong> (Apple) &mdash; on-device machine-learning runtime.</li>
+  <li><strong>llama.cpp</strong> &mdash; local inference library.</li>
+  <li><strong>swift-transformers</strong> and <strong>swift-jinja</strong> (Hugging Face) &mdash; model file handling and chat-template rendering.</li>
 </ul>
 
-<h2>Network access</h2>
-<p>The only network activity is downloading AI model files from Hugging Face directly to your device. This is a direct download from the model host; the Service Provider neither receives nor stores this traffic. All inference (generating responses) happens completely offline on your device.</p>
+<p>The bundled model is <strong>Gemma 4 E2B Instruct</strong> (a text-only 4-bit variant published on Hugging Face as <code>over-show/gemma-4-e2b-it-text-only-4bit</code>), which is distributed under Google&rsquo;s <strong>Gemma Terms of Use</strong>. If you use the model&rsquo;s outputs, those terms, together with Google&rsquo;s Gemma Prohibited Use Policy, apply to you as an additional agreement between you and Google. The Service Provider is not affiliated with, endorsed by, or sponsored by Google.</p>
 
-<h2>Children</h2>
-<p>The Application is not intended for children under 16 years of age, and the Service Provider does not knowingly collect personal information from children.</p>
+<h2>5. AI-generated content</h2>
 
-<h2>Changes</h2>
-<p>The Service Provider may update this Privacy Policy from time to time. Any material changes will be posted on this page with an updated effective date.</p>
+<p>Replies are generated by a small on-device language model and may be inaccurate, incomplete, outdated, or inappropriate. Do not rely on them for medical, legal, financial, safety-critical, or other professional advice. Approximately the last two messages of your conversation, together with a fixed system instruction, are provided to the model each turn, so the model may not remember earlier parts of a long conversation.</p>
 
-<h2>Contact Us</h2>
-<p>If you have any questions about this Privacy Policy, please contact the Service Provider at <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>.</p>
+<h2>6. Children</h2>
 
-<footer>This privacy policy is effective as of 2026-09-16.</footer>
+<p>The Application is not directed at children. The Service Provider does not knowingly collect any information from children, because it does not collect information from anyone.</p>
+
+<h2>7. Your control over your data</h2>
+
+<ul>
+  <li><strong>Clear Chat</strong> (in the &ldquo;&hellip;&rdquo; menu) erases the current conversation and deletes its history files from your device.</li>
+  <li><strong>Deleting a model</strong> (model menu &rarr; <em>DEL &hellip;</em>) removes the downloaded model files and that model&rsquo;s stored history, freeing about 2.5&nbsp;GiB.</li>
+  <li><strong>Deleting the Application</strong> removes all of the above from your iPhone.</li>
+</ul>
+
+<p>Since nothing is ever uploaded, there is no server-side copy to remove.</p>
+
+<h2>8. Changes to this policy</h2>
+
+<p>This policy may be updated to reflect changes in the Application. The &ldquo;Effective date&rdquo; above will be revised accordingly, and the current version will always be available at this address. Continued use of the Application after an update constitutes acceptance of the revised policy.</p>
+
+<h2>9. Contact</h2>
+
+<p>Questions about this policy or about privacy in the Application can be sent to <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a>.</p>
+
+<footer>
+  <p>LocalGemmaChat 1.1.2 (build 1) &middot; Privacy Policy &middot; Effective October 4, 2026<br>
+  See also: <a href="support.html">Help &amp; Support</a></p>
+</footer>
 
 </body>
 </html>
